@@ -28,7 +28,7 @@ class UserProfile(models.Model):
 
 
 class ActivityPeriod(models.Model):
-	user 					= models.OneToOneField(User, on_delete=models.CASCADE, related_name = 'activity_period')
+	user 					= models.ForeignKey(User, on_delete=models.CASCADE, related_name = 'activity_period')
 	start_time				= models.DateTimeField(blank = True, null = True)
 	end_time 				= models.DateTimeField(blank = True, null = True)
 
