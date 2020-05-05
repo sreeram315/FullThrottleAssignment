@@ -73,6 +73,12 @@ Proceed when all the packages are successfully installed.
 
     (*make sure you are in the root folder where manage.py is present*)
 
+   do to populate data
+
+   `$ python manage.py populate_data`
+
+   
+
 ------
 
 
