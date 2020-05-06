@@ -26,7 +26,7 @@ SECRET_KEY = 'ach_u50g@++ez1f$_(7fy&+lp!gi6@3fl-c6-od)u-na-l*b!_'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+TIME_ZONE =  'Asia/Kolkata'
 
 # Application definition
 
@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'accounts'
+    'accounts',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -107,16 +108,26 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+# TIME_ZONE = 'UTC'
+# USE_TZ = False
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
